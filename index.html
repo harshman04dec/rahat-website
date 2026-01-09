@@ -142,81 +142,136 @@
       font-size: 0.8rem;
       opacity: 0.6;
     }
+    
+    .navbar{position:sticky;top:0;z-index:1000;background:#111827;color:#fff;display:flex;align-items:center;justify-content:space-between;padding:0.8rem 1.2rem;box-shadow:0 6px 20px rgba(0,0,0,.2)}
+    .navbar .logo{font-weight:700;font-size:1.1rem}
+    .nav-links{list-style:none;display:flex;gap:1rem;margin:0;padding:0}
+    .nav-links a{color:#fff;text-decoration:none;font-size:.9rem;opacity:.9}
+    .burger{display:none;background:none;border:none;color:#fff;font-size:1.4rem}
+    body.nav-open .nav-links{display:flex}
+    @media(max-width:768px){.nav-links{display:none;position:absolute;top:60px;right:0;background:#111827;flex-direction:column;padding:1rem;border-radius:12px}.burger{display:block}}
+    .price{margin-top:.5rem;font-weight:600;color:var(--accent)}
+    .lang-toggle{margin-left:1rem;font-size:.8rem;cursor:pointer;opacity:.8}
+    .map{width:100%;height:320px;border-radius:18px;border:0;margin-top:1rem}
+    
+    html{scroll-behavior:smooth}
+    .badge{background:#16a34a;color:#fff;padding:.3rem .8rem;border-radius:999px;font-size:.75rem;margin-left:.6rem}
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.8);display:none;align-items:center;justify-content:center;z-index:2000}
+    .lightbox img{max-width:90%;max-height:90%;border-radius:16px}
+    .lightbox.active{display:flex}
+    .qr{width:140px;height:140px;border-radius:12px}
   </style>
 </head>
 <body>
 
 <header>
-  <h1>Modern Furniture Collection</h1>
-  <p>Crafted for homes & offices · Panchkuian Market, New Delhi</p>
+  <h1>Rahat Ki Dukan</h1>
+  <p>Quality furniture for homes & offices · Panchkuian Market, New Delhi</p>
 </header>
 
+<nav class="navbar">
+  <div class="logo">Rahat Ki Dukan <span class="badge">Since 1998</span> <span class="lang-toggle" onclick="toggleLang()">हिंदी</span></div>
+  <button class="burger" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  <ul class="nav-links">
+    <li><a href="#products">Products</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#hours">Hours</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 <main class="container">
-  <section class="grid">
+  <section id="products" class="grid">
     <div class="card">
-      <img src="https://picsum.photos/800/600?random=1" alt="Sofa">
-      <div class="card-content">
-        <h3>Luxury Sofa Sets</h3>
-        <p>Comfort-first designs with premium upholstery.</p>
-      </div>
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80" alt="Furniture item" onclick="openLightbox(this.src)">
+      <div class="card-content"><h3>Premium Furniture</h3><div class="price">₹32,000</div></div>
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/800/600?random=2" alt="Bed">
-      <div class="card-content">
-        <h3>Designer Beds</h3>
-        <p>Solid wood frames with modern aesthetics.</p>
-      </div>
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80" alt="Furniture item" onclick="openLightbox(this.src)">
+      <div class="card-content"><h3>Premium Furniture</h3><div class="price">₹15,000</div></div>
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/800/600?random=3" alt="Dining Table">
-      <div class="card-content">
-        <h3>Dining Tables</h3>
-        <p>Elegant finishes for family & commercial use.</p>
-      </div>
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80" alt="Furniture item" onclick="openLightbox(this.src)">
+      <div class="card-content"><h3>Premium Furniture</h3><div class="price">₹15,000</div></div>
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/800/600?random=4" alt="Wardrobe">
-      <div class="card-content">
-        <h3>Wardrobes & Storage</h3>
-        <p>Space-efficient solutions with custom sizing.</p>
-      </div>
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80" alt="Furniture item" onclick="openLightbox(this.src)">
+      <div class="card-content"><h3>Premium Furniture</h3><div class="price">₹15,000</div></div>
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/800/600?random=5" alt="Office Furniture">
-      <div class="card-content">
-        <h3>Office Furniture</h3>
-        <p>Workstations, chairs, and conference tables.</p>
-      </div>
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80" alt="Furniture item" onclick="openLightbox(this.src)">
+      <div class="card-content"><h3>Premium Furniture</h3><div class="price">₹15,000</div></div>
     </div>
 
     <div class="card">
-      <img src="https://picsum.photos/800/600?random=6" alt="Coffee Table">
-      <div class="card-content">
-        <h3>Accent Pieces</h3>
-        <p>Side tables, coffee tables, and decor units.</p>
-      </div>
+      <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=900&q=80" alt="Furniture item" onclick="openLightbox(this.src)">
+      <div class="card-content"><h3>Premium Furniture</h3><div class="price">₹15,000</div></div>
     </div>
   </section>
 
-  <section class="cta">
+  <section id="contact" class="cta">
+    <div>
+      <img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://wa.me/919953006815" alt="WhatsApp QR">
     <div>
       <h2>Enquire or Get a Custom Quote</h2>
       <p>Share your requirements and dimensions. Quick response guaranteed.</p>
     </div>
     <div class="cta-buttons">
-      <a class="btn btn-email" href="mailto:enquiry@yourfurniturestore.com">Email Enquiry</a>
-      <a class="btn btn-whatsapp" href="https://wa.me/919999999999" target="_blank">WhatsApp Us</a>
+      <a class="btn btn-email" href="mailto:rahat.preet@gmail.com">Email Enquiry</a>
+      <a class="btn btn-whatsapp" href="https://wa.me/919953006815?text=Hi%20I%20saw%20your%20furniture%20catalogue%20and%20would%20like%20to%20enquire" target="_blank">WhatsApp Us</a>
     </div>
   </section>
+
+<section id="hours" class="container">
+  <h2>Opening Hours</h2>
+  <p>Monday – Saturday: 10:30 AM – 8:30 PM<br>Sunday: 11:00 AM – 6:00 PM</p>
+</section>
+
+<section id="reviews" class="container">
+  <h2>Customer Reviews</h2>
+  <div class="grid">
+    <div class="card"><div class="card-content"><h3>Premium Furniture</h3><div class="price">₹15,000</div></div></div>
+    <div class="card"><div class="card-content"><h3>Premium Furniture</h3><div class="price">₹15,000</div></div></div>
+    <div class="card"><div class="card-content"><h3>Premium Furniture</h3><div class="price">₹15,000</div></div></div>
+  </div>
+</section>
+
+<section class="container">
+  <iframe class="map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Panchkuian%20Market%20Delhi&output=embed"></iframe>
+  <br><br>
+  <a class="btn btn-email" href="https://www.google.com/maps/search/?api=1&query=Panchkuian+Market+Delhi" target="_blank">📍 Get Directions</a>
+</section>
 </main>
 
 <footer>
   © 2026 · Panchkuian Market Furniture Store · New Delhi
 </footer>
 
+<script>
+  let isHindi=false;
+  function toggleLang(){
+    const btn=document.querySelector('.lang-toggle');
+    if(!isHindi){
+      document.querySelector('header p').innerText='घरों और ऑफिस के लिए गुणवत्तापूर्ण फर्नीचर · पंचकुइयाँ मार्केट, नई दिल्ली';
+      document.querySelector('#hours h2').innerText='खुलने का समय';
+      document.querySelector('#reviews h2').innerText='ग्राहक समीक्षा';
+      btn.innerText='English';
+      isHindi=true;
+    }else{
+      document.querySelector('header p').innerText='Quality furniture for homes & offices · Panchkuian Market, New Delhi';
+      document.querySelector('#hours h2').innerText='Opening Hours';
+      document.querySelector('#reviews h2').innerText='Customer Reviews';
+      btn.innerText='हिंदी';
+      isHindi=false;
+    }
+  }
+</script>
+<div class="lightbox" onclick="this.classList.remove('active')"><img id="lightboxImg"></div>
+<script>
+  function openLightbox(src){const lb=document.querySelector('.lightbox');document.getElementById('lightboxImg').src=src;lb.classList.add('active')}
+</script>
 </body>
 </html>
